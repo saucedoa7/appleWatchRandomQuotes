@@ -1,21 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RxO-te-CEQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3734"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--pg1-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller identifier="pg1" contentMode="scaleAspectFit" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SwiftAppleWatch1_Watch_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="See Quote" id="ssC-km-chm">
+                            <color key="titleColor" red="0.50196081399917603" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="RxO-te-CEQ" kind="push" id="9YY-MK-Zde"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Change Text" id="lHj-Db-D16">
+                            <connections>
+                                <action selector="onChangeText" destination="AgC-eL-Hgc" id="ChV-jr-iBI"/>
+                            </connections>
+                        </button>
+                        <label alignment="center" verticalAlignment="center" text="Label" id="PQI-nt-u1a">
+                            <color key="textColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                    </items>
+                    <color key="backgroundColor" red="0.50196081399917603" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="lblChange" destination="PQI-nt-u1a" id="EZ3-eQ-lcg"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="347"/>
+            <point key="canvasLocation" x="221" y="344.5"/>
+        </scene>
+        <!--Back-->
+        <scene sceneID="6dq-zf-pcw">
+            <objects>
+                <controller title="Back" id="RxO-te-CEQ" customClass="InterfaceController" customModule="SwiftAppleWatch1_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="New Quote" id="ezO-TL-xon">
+                            <color key="titleColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onNewQuoteChange" destination="RxO-te-CEQ" id="3qS-aE-7O2"/>
+                            </connections>
+                        </button>
+                        <label width="136" height="152" alignment="center" text="This is a brand new day for you to accomplish a brand new feat" textAlignment="center" numberOfLines="10" id="vEx-LT-00z">
+                            <fontDescription key="font" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                        </label>
+                    </items>
+                    <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="btnChangeQuote" destination="ezO-TL-xon" id="Opm-VL-In8"/>
+                        <outlet property="lblQuote" destination="vEx-LT-00z" id="osp-4N-GwV"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="455" y="343.5"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModuleProvider="target">
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="SwiftAppleWatch1_Watch_App" customModuleProvider="target">
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y"/>
                         <group alignment="left" id="uCw-4Q-Ouw"/>
@@ -44,7 +89,7 @@
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="SwiftAppleWatch1_Watch_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>

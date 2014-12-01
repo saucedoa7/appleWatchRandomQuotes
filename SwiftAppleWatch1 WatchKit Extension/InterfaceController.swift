@@ -12,6 +12,15 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet weak var lblChange: WKInterfaceLabel!
+    @IBOutlet weak var btnChangeQuote: WKInterfaceButton!
+    
+    @IBOutlet weak var lblQuote: WKInterfaceLabel!
+    
+    var number = 12
+    
+    var quotes = ["1", "2", "3","4","5"]
+    
     override init(context: AnyObject?) {
         // Initialize variables here.
         super.init(context: context)
@@ -31,5 +40,13 @@ class InterfaceController: WKInterfaceController {
         NSLog("%@ did deactivate", self)
         super.didDeactivate()
     }
+    @IBAction func onChangeText() {
+        lblChange.setText("Changed to \(number)")
+    }
 
+    @IBAction func onNewQuoteChange() {
+        var randomQuote: Int =  Int(arc4random()) % quotes.count
+        NSLog("@ \(quotes[randomQuote])", self)
+        lblQuote.setText(quotes[randomQuote])
+    }
 }
